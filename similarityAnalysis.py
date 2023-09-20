@@ -5,8 +5,8 @@ import similarityCoefficient
 matplotlib.use('TkAgg')
 
 
-def Coefficient(failure_testcase_folder, html_folder, fault_loc, n):
-    result_dic = similarity_measure(failure_testcase_folder, html_folder)
+def Coefficient(html_folder, failure_testcase_num, fault_loc, n):
+    result_dic = similarity_measure(html_folder, failure_testcase_num)
     print(result_dic)
     for coefficient in similarityCoefficient.coefficient_list:
         sus_dic = {}
@@ -45,8 +45,8 @@ def Coefficient(failure_testcase_folder, html_folder, fault_loc, n):
     # plt.show()
 
 
-def similarity_measure(failure_testcase_folder, html_folder):
-    class_statement_vector, coverage_matrix, result_vector = get_matrix(failure_testcase_folder, html_folder)
+def similarity_measure(html_folder, failure_testcase_num):
+    class_statement_vector, coverage_matrix, result_vector = get_matrix(html_folder, failure_testcase_num)
     print('coverage_matrix.shape: {0}, coverage_matrix: {1}'.format(coverage_matrix.shape, coverage_matrix))
     print('result_vector.shape: {0}, result_vector: {1}'.format(result_vector.shape, result_vector))
 
@@ -71,10 +71,21 @@ def similarity_measure(failure_testcase_folder, html_folder):
 
 
 if __name__ == '__main__':
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
-    failure_testcase_folder_path = ("/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1"
-                                    "/ZK_1419/htmlReport/1.test.FLEPredicateTest")
-    fault_loc = 'org.apache.zookeeper.server.quorum.FastLeaderElection.244'
     statement_num = 23630
 
-    Coefficient(failure_testcase_folder_path, html_folder_path, fault_loc, statement_num)
+    # # ZK_1419
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.quorum.FastLeaderElection.245'
+
+    # # ZK_2355
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_2355/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.quorum.Learner.171'
+
+    # ZK_1851
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1851/htmlReport"
+    failure_testcase_num = 9
+    fault_loc = 'org.apache.zookeeper.server.quorum.FollowerRequestProcessor.16'
+
+    Coefficient(html_folder_path, failure_testcase_num, fault_loc, statement_num)

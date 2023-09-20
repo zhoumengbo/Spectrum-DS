@@ -4,12 +4,12 @@ from bs4 import BeautifulSoup
 from Utils.getSuspiciousClasses import get_suspicious_classes
 
 
-def get_matrix(failure_testcase_folder, html_folder):
+def get_matrix(html_folder, failure_testcase_num):
     coverage_matrix = np.array([])
     class_statement_vector = []
     input_title = False
     result_vector = np.array([])
-    suspicious_classes = get_suspicious_classes(failure_testcase_folder)
+    suspicious_classes = get_suspicious_classes(html_folder, failure_testcase_num)
     print('suspicious_classes: {0}'.format(suspicious_classes))
     testcase_dirs = os.listdir(html_folder)
     for t in testcase_dirs:
@@ -49,8 +49,6 @@ def get_vector(path):
             vec = np.append(vec, 1)
         else:
             vec = np.append(vec, 0)
-        if line.text.find('inject fault') != -1:
-            print('fault line: {0}'.format(vec.size))
     return vec
 
 
