@@ -83,9 +83,14 @@ if __name__ == '__main__':
     # failure_testcase_num = 1
     # fault_loc = 'org.apache.zookeeper.server.quorum.Learner.171'
 
-    # ZK_1851
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1851/htmlReport"
-    failure_testcase_num = 9
-    fault_loc = 'org.apache.zookeeper.server.quorum.FollowerRequestProcessor.16'
+    # # ZK_1851
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1851/htmlReport"
+    # failure_testcase_num = 9
+    # fault_loc = 'org.apache.zookeeper.server.quorum.FollowerRequestProcessor.16'
+
+    # # ZK_1489
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1489/htmlReport"
+    failure_testcase_num = 1
+    fault_loc = 'org.apache.zookeeper.server.persistence.FileTxnSnapLog.96'
 
     Coefficient(html_folder_path, failure_testcase_num, fault_loc, statement_num)
