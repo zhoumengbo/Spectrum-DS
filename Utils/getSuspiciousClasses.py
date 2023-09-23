@@ -6,7 +6,6 @@ def get_suspicious_classes(html_folder, failure_testcase_num):
     classes = {}
     case_dirs = os.listdir(html_folder)
     for k in range(1, failure_testcase_num + 1):
-        print(k)
         for case in case_dirs:
             if case.startswith('{0}.'.format(k)):
                 failure_case_path = html_folder + os.sep + case
@@ -47,7 +46,7 @@ def get_suspicious_classes(html_folder, failure_testcase_num):
 
 
 if __name__ == '__main__':
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1489/htmlReport"
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
     failure_testcase_num = 1
     result = get_suspicious_classes(html_folder_path, failure_testcase_num)
     print('Suspicious Classes: {0}'.format(result))

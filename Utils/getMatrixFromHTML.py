@@ -13,10 +13,13 @@ def get_matrix(html_folder, failure_testcase_num):
     print('suspicious_classes: {0}'.format(suspicious_classes))
     testcase_dirs = os.listdir(html_folder)
     for t in testcase_dirs:
-        if t.startswith('1.'):
-            result_vector = np.append(result_vector, 1)
-        else:
-            result_vector = np.append(result_vector, 0)
+        value = 0
+        for n in range(1, failure_testcase_num + 1):
+            if t.startswith('{0}.'.format(n)):
+                value = 1
+        result_vector = np.append(result_vector, value)
+
+        print(result_vector)
         vector_classes = np.array([])
         for k, v in suspicious_classes.items():
             html_path = html_folder + os.sep + t + os.sep + v
@@ -53,7 +56,6 @@ def get_vector(path):
 
 
 if __name__ == '__main__':
-    failure_testcase_folder_path = ("/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1"
-                                    "/ZK_1419/htmlReport/1.test.FLEPredicateTest")
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
-    get_matrix(failure_testcase_folder_path, html_folder_path)
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1412/htmlReport"
+    failure_testcase_num = 3
+    get_matrix(html_folder_path, failure_testcase_num)
