@@ -71,7 +71,9 @@ def similarity_measure(html_folder, failure_testcase_num):
 
 
 if __name__ == '__main__':
-    statement_num = 23630
+    zk_v1_statement_num = 23630
+    zk_v2_statement_num = 28383
+    zk_v3_statement_num = 29392
 
     # # ZK_1419
     # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
@@ -93,9 +95,44 @@ if __name__ == '__main__':
     # failure_testcase_num = 1
     # fault_loc = 'org.apache.zookeeper.server.persistence.FileTxnSnapLog.96'
 
-    # ZK_1412
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1412/htmlReport"
-    failure_testcase_num = 3
-    fault_loc = 'org.apache.zookeeper.server.FinalRequestProcessor.233'
+    # # ZK_1412
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1412/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.FinalRequestProcessor.233'
 
-    Coefficient(html_folder_path, failure_testcase_num, fault_loc, statement_num)
+    # # ZK_2775
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_2775/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.ClientCnxn.436'
+
+    # # ZK_1683
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1683/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.ClientCnxnSocketNIO.161'
+
+    # # ZK_3306
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v2/ZK_3306/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.DataTree.146'
+
+    # # ZK_2886
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v2/ZK_2886/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.FinalRequestProcessor.64'
+
+    # # ZK_2725
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v2/ZK_2725/htmlReport"
+    # failure_testcase_num = 3
+    # fault_loc = 'org.apache.zookeeper.server.quorum.QuorumZooKeeperServer.6'
+
+    # # ZK_3082
+    # html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v2/ZK_3082/htmlReport"
+    # failure_testcase_num = 1
+    # fault_loc = 'org.apache.zookeeper.server.persistence.FileTxnSnapLog.128'
+
+    # ZK_4269
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v3/ZK_4269/htmlReport"
+    failure_testcase_num = 1
+    fault_loc = 'org.apache.zookeeper.server.quorum.QuorumPeer.398'
+
+    Coefficient(html_folder_path, failure_testcase_num, fault_loc, zk_v3_statement_num)

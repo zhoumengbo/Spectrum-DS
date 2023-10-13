@@ -46,7 +46,7 @@ def get_suspicious_classes(html_folder, failure_testcase_num):
 
 
 if __name__ == '__main__':
-    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v1/ZK_1419/htmlReport"
+    html_folder_path = "/home/zmb/project/Fault_Localization/Benchmark-DS/Zookeeper/Experiment/v3/ZK_4367/htmlReport"
     failure_testcase_num = 1
     result = get_suspicious_classes(html_folder_path, failure_testcase_num)
     print('Suspicious Classes: {0}'.format(result))
